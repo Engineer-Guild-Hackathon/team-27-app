@@ -9,6 +9,17 @@ export default defineConfig(({ mode }) => {
     server: {
       port: Number(env.PORT) || 5173,
     },
+    plugins: [
+      createHtmlPlugin({
+        minify: true,
+        inject: {
+          data: {
+            lang: env.VITE_LANG,
+            name: env?.VITE_NAME,
+          },
+        },
+      }),
+    ],
     build: {
       outDir: "./build",
       emptyOutDir: true,
