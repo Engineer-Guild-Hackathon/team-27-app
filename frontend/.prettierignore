@@ -1,0 +1,11 @@
+node_modules/
+
+.env
+.gitignore
+.prettierrc.json
+package-lock.json
+package.json
+vite.config.js
+
+README.md
+build/
