@@ -3,18 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/styles/index.css" />
   </head>
   <body>
     <div id="logo">
       <img
         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH_jQhgLBr2KyAsuNpY9pC68gm7nRVrTtEMGfoFHLvZrjcOBJ9-PmanN4-Fz2BtNmdBLynA8MpjzUhPQcbl_RMTxv4CmIwbkhm48FIvxaM6svgzPK-GfDetAflS7lT7YL95gAfUnIH19B8cqAVGzybMkEWlgNdVgyvo3psha8IfnQv1mhvRQeRTf5hJj0G/s625/sweets_nama_donuts_cherry.png"
+        alt="logo"
+        title="logo"
       />
     </div>
-    <div class="btn">
-      <input type="button" value="始める" />
+
+    <div class="center">
+      <h1><%- name %></h1>
+      <p><%- description %></p>
+      <a class="btn" id="start" href="account.html">始める</a>
     </div>
-    <div class="btn">
-      <input type="button" value="プライバシーポリシー" />
+
+    <div class="bottom center">
+      <button class="btn" id="open-privacy-policy">プライバシーポリシー</button>
     </div>
 
     <script type="module" src="src/script.js"></script>

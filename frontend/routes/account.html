@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/styles/account.css" />
   </head>
   <body>
-    <div id="mail">
-      <input type="text" />
+    <div class="input-wrapper">
+      <label for="email-imput">メールアドレス</label><br />
+      <input id="email-input" type="email" />
+      <br />
+      <label for="password-input">パスワード</label><br />
+      <input id="password-input" type="password" />
+      <div class="center">
+        <button class="btn" id="register">登録</button>
+        <p>または</p>
+        <button class="btn" id="login">ログイン</button>
+      </div>
     </div>
-    <div id="password">
-      <input type="text" />
-    </div>
-    <div id="register.btn">
-      <input type="button" value="登録" />
-    </div>
-    <div id="login.btn">
-      <input type="button" value="ログイン" />
-    </div>
-    <div class="btn">
-      <input type="button" value="プライバシーポリシー" />
+
+    <div class="bottom center">
+      <button class="btn" id="open-privacy-policy">プライバシーポリシー</button>
     </div>
 
     <script type="module" src="src/script.js"></script>

@@ -6,19 +6,14 @@
   </head>
   <body>
     <div justify-content: space-between;>
-      <input class="circle-btn" type="button" value="設定ボタン" />
-      <input class="circle-btn" type="button" value="アカウント" />
+      <button class="circle-btn" title="設定"></button>
+      <button class="circle-btn" title="アカウント設定"></button>
     </div>
-    <div id="character"></div>
-    <div class="=btn">
-      <input type="button" value="キャラクター切り替え" />
-    </div>
-    <div class="circle-btn">
-      <input type="button" value="ミュート/解除" />
-    </div>
-    <div id="log.log-close">
-      <input type="button" value="会話ログ" />
-    </div>
+
+    <button class="btn" id="change-character">キャラクター切り替え</button>
+
+    <button class="circle-btn" id="mute" title="ミュート/解除"></button>
+    <button class="btn" id="log">会話ログ</button>
 
     <script type="module" src="src/script.js"></script>
   </body>

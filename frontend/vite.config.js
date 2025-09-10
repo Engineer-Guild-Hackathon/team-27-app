@@ -16,7 +16,8 @@ export default defineConfig(({ mode }) => {
       createMultiHtmlPlugin({
         variables: {
           lang: env.VITE_LANG,
-          name: env.VITE_NAME
+          name: env.VITE_NAME,
+          description: env.VITE_DESCRIPTION,
         }
       })
     ],
