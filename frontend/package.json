@@ -19,6 +19,6 @@
   "devDependencies": {
     "prettier": "^3.6.2",
     "vite": "^7.1.5",
-    "vite-plugin-html": "^3.2.2"
+    "vite-plugin-multi-html": "^1.0.0"
   }
 }
