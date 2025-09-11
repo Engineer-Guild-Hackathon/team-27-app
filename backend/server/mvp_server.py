@@ -1,5 +1,5 @@
 import asyncio, json, logging, time, io, wave, os
-import websockets, aiohttp, webrtcvad, numpy as np
+import websockets, aiohttp, webrtcvad
 from vosk import Model, KaldiRecognizer
 from dotenv import load_dotenv
 

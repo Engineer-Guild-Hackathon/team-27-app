@@ -20,7 +20,6 @@ grpcio-status==1.71.2
 httplib2==0.30.2
 idna==3.10
 multidict==6.6.4
-numpy==2.3.3
 propcache==0.3.2
 proto-plus==1.26.1
 protobuf==5.29.5
