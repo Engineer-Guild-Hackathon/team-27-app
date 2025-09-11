@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>MVP Voice</title>
+  <style>
+    body { font-family:sans-serif; padding:20px; }
+    #log { white-space:pre-wrap; background:#eee; padding:8px; height:160px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h1>MVP Voice</h1>
+  <button id="btnStart">Start</button>
+  <p id="status">Idle</p>
+  <audio id="player" controls></audio>
+  <div id="log"></div>
+  <script src="audio-processor.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
