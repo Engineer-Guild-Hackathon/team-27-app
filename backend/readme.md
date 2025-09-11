@@ -15,9 +15,11 @@ wget https://github.com/VOICEVOX/voicevox_engine/releases/download/バージョ�
 ```
 などでインストールし
 ```
-7z x target.7z
+7z x "ファイル名"
 ```
 で解凍する(7zipがない場合は`sudo apt-get install p7zip-full`でインストール)
+ダウンロードしたファイルは`voicevox_engine-linux-cpu-x64-0.24.1.7z.001`のようなファイル名になっているのでそのままコピペするとよい
+(アーカイブファイルは圧縮の際に複数ファイルに分けることができ、末尾に.001、.002のような感じで連番になる)
 
 あとは解凍したフォルダの中のrun、というファイルを実行すると、VOICEVOXのバックエンドサーバーが立ち上がる(中身はFastAPI)
 VOICEVOXに関しては、どこで起動していても変わらない(確かWSL⇔Windows間でも大丈夫だったと思う)
