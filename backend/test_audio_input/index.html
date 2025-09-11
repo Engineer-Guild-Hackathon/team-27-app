@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>テスト用フロントエンド簡易実装</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 50px;
+      }
+      #startButton {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 20px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>テスト</h1>
+
+    <button id="startButton">テストを開始</button>
+
+    <p id="status">マイクの使用を許可</p>
+
+    <script src="audio-processor.js"></script>
+    <script src="main.js" defer></script>
+  </body>
+</html>
