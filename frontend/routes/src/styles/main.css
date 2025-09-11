@@ -1,7 +1,6 @@
 .character-wrapper {
   text-align: center;
   margin-top: 50px;
-  padding: 10px;
 }
 
 .character-wrapper .frame {
@@ -17,6 +16,7 @@
 .character-wrapper .frame img {
   user-select: none;
   -webkit-user-drag: none;
+  margin: 15px;
   width: 60vh;
   max-width: 200px;
 }

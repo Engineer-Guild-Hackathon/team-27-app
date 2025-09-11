@@ -22,7 +22,7 @@
 body {
   background-color: var(--bgcolor);
   display: block;
-  margin: 50px 0;
+  margin: 70px 0;
   padding: 0;
 }
 
@@ -61,7 +61,7 @@ header {
 }
 
 #logo img {
-  max-width: 50vh;
+  max-width: 30vh;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -142,4 +142,19 @@ a.btn {
 #open-privacy-policy {
   width: 80%;
   max-width: 500px;
+}
+
+#privacy-policy-popup {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  background-color: var(--sub-bgcolor);
+  border-radius: 5px;
+  margin: 0 10vw;
+  padding: 20px;
+  width: 80vw;
+}
+
+#privacy-policy-popup h1 {
+  text-align: center;
 }

@@ -1,3 +1,5 @@
+import { marked } from "marked";
+
 let isMicMute = true;
 const micBtn = document.getElementById("mic");
 
