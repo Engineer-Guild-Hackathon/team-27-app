@@ -30,7 +30,7 @@ https://alphacephei.com/vosk/models
 `server/models/vosk-model-ja-0.22/`
 のようになっているとよい
 
-##　４．.envの設定
+## ４．.envの設定
 `server`直下に`.env`というファイルを作成し、APIキーとモデルを入力する
 ```
 API_KEY="キーを入力"
