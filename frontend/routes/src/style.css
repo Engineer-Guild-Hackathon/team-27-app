@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
 
 :root {
+  --blue: #3685b2;
   --bgcolor: #e4faff;
   --sub-bgcolor: #cccccc;
   --btn-color: #000000;
@@ -36,7 +37,7 @@ header {
 }
 
 #back {
-  background: #52dcff;
+  background: var(--blue);
   position: relative;
 }
 
