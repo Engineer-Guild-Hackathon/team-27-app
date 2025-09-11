@@ -1,3 +1,22 @@
+const body = document.body;
+let header;
+
+window.addEventListener("load", (e) => {
+  header = document.createElement("header");
+
+  const backBtn = document.createElement("button");
+  backBtn.id = "back";
+  backBtn.title = "戻る";
+  backBtn.classList.add("circle-btn");
+
+  header.appendChild(backBtn);
+  body.appendChild(header);
+
+  backBtn.addEventListener("click", () => {
+    history.go(-1);
+  });
+});
+
 const openPrivacyPolicy = document.getElementById("open-privacy-policy");
 const mailInput = document.getElementById("mail-input");
 const passwordInput = document.getElementById("password-input");

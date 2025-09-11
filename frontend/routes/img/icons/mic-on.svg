@@ -1,0 +1,7 @@
+<svg version="1.1" id="Layer_1"
+  xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve">
+  <style></style>
+  <path style="fill: rgb(75, 75, 75);" d="M16 22.5c-5.514 0-10-4.486-10-10a1 1 0 1 1 2 0c0 4.411 3.589 8 8 8s8-3.589 8-8a1 1 0 1 1 2 0c0 5.514-4.486 10-10 10z"/>
+  <path style="fill: rgb(75, 75, 75);" d="M16 4a2.62 2.62 0 0 0-2.62 2.62v7.76a2.62 2.62 0 1 0 5.24 0V6.62A2.62 2.62 0 0 0 16 4zM16 29a1 1 0 0 1-1-1v-6.5a1 1 0 1 1 2 0V28a1 1 0 0 1-1 1z"/>
+  <path style="fill: rgb(75, 75, 75);" d="M19.25 29h-6.5a1 1 0 1 1 0-2h6.5a1 1 0 1 1 0 2z"/>
+</svg>

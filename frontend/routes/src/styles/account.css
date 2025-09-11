@@ -1,5 +1,7 @@
 .input-wrapper {
-  margin: 5%;
+  max-width: 500px;
+  width: 90%;
+  margin: 300px auto;
   padding: 10px;
   background-color: var(--sub-bgcolor);
   border-radius: 5px;
