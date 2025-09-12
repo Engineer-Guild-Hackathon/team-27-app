@@ -2,9 +2,10 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <script type="module" crossorigin src="./assets/DUC3_t2g.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/Dr9JCOkF.css">
-    <link rel="stylesheet" crossorigin href="./assets/Dj7DF_R4.css">
+    <script type="module" crossorigin src="./assets/B6SxZ8Rf.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/CvY4QVg1.js">
+    <link rel="stylesheet" crossorigin href="./assets/B-3Njb6v.css">
+    <link rel="stylesheet" crossorigin href="./assets/CQqyyI-A.css">
   </head>
   <body>
     <div class="character-wrapper">
@@ -14,15 +15,29 @@
     </div>
 
     <div class="main-panel center">
-      <button class="btn" id="change-character">キャラクター切り替え</button>
+      <button class="btn m" id="change-character">キャラクター切り替え</button>
       <br />
-      <button class="circle-btn" id="mute" title="ミュート/解除"></button>
+      <button class="circle-btn mic-off" id="mic" disabled></button>
+      <br />
+      <button class="btn m" id="btnStart">接続する</button>
+      <br />
+      <p id="status">未接続</p>
+      <audio id="player"></audio>
     </div>
 
     <div id="main-tools">
+      <button class="circle-btn" id="log" title="会話ログ"></button>
       <button class="circle-btn" id="setting" title="設定"></button>
       <button class="circle-btn" id="account" title="アカウント設定"></button>
-      <button class="circle-btn" id="log" title="会話ログ"></button>
+    </div>
+
+    <div id="log-wrapper">
+      <div id="log-title">
+        <h2>ログ</h2>
+      </div>
+      <div id="log-c">
+        <!-- log -->
+      </div>
     </div>
 
   </body>
