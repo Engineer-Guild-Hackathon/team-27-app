@@ -8,7 +8,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 VOICEVOX_URL = "http://127.0.0.1:50021"
-SPEAKER_ID = 3
+SPEAKER_ID = 2
 VAD_MODE = 2  # 固定
 FRAME_MS = 20
 SAMPLE_RATE = 16000
@@ -24,7 +24,8 @@ REQ_SILENCE_END_FRAMES = SILENCE_END_MS // FRAME_MS
 
 # グローバル初期化
 logging.info("Loading VOSK model...")
-vosk_model = Model("server/models/vosk-model-ja-0.22")
+base = os.path.dirname(__file__)
+vosk_model = Model(os.path.join(base, "models", os.getenv("VOSK_MODEL", "vosk-model-ja-0.22")))
 logging.info("Loaded VOSK.")
 vad = webrtcvad.Vad(VAD_MODE)
 
@@ -70,12 +71,29 @@ async def run_llm(conversation):
     return await asyncio.to_thread(_gemini_call_sync, history_before, last_user)
 
 
-async def tts_voicevox(text: str) -> bytes:
-    async with aiohttp.ClientSession() as sess:
-        async with sess.post(f"{VOICEVOX_URL}/audio_query", params={"text": text, "speaker": SPEAKER_ID}, data="") as r:
-            q = await r.json()
-        async with sess.post(f"{VOICEVOX_URL}/synthesis", params={"speaker": SPEAKER_ID}, json=q) as r2:
-            return await r2.read()
+_session: aiohttp.ClientSession | None = None
+
+
+async def get_http_session() -> aiohttp.ClientSession:
+    global _session
+    if _session is None or _session.closed:
+        _session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30))
+    return _session
+
+
+async def tts_voicevox(text: str, **opts) -> bytes:
+    sess = await get_http_session()
+    async with sess.post(f"{VOICEVOX_URL}/audio_query", params={"text": text, "speaker": SPEAKER_ID}, data="") as r:
+        q = await r.json()
+    # q の調整（speedScale 等）をここで行う
+    async with sess.post(f"{VOICEVOX_URL}/synthesis", params={"speaker": SPEAKER_ID}, json=q) as r2:
+        return await r2.read()
+
+
+async def close_aiohttp_resources():
+    global _session
+    if _session and not _session.closed:
+        await _session.close()
 
 
 def pcm16_concat(frames):
@@ -189,4 +207,11 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+
+    async def _runner():
+        try:
+            await main()
+        finally:
+            await close_aiohttp_resources()
+
+    asyncio.run(_runner())
