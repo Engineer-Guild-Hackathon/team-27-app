@@ -71,7 +71,7 @@ window.addEventListener("load", async () => {
   body.appendChild(ppEl);
 
   openPrivacyPolicy.addEventListener("click", () => {
-    ppEl.classList.add("open-pp")
+    ppEl.classList.add("open-pp");
   });
 });
 

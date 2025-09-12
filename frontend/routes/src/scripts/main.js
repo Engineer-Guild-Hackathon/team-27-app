@@ -103,21 +103,25 @@ let lastUrl = null;
 function playBlob(blob) {
   // 前の URL を解放（もし残っていれば）
   if (lastUrl) {
-    try { URL.revokeObjectURL(lastUrl); } catch (e) { }
+    try {
+      URL.revokeObjectURL(lastUrl);
+    } catch (e) {}
     lastUrl = null;
   }
 
   const url = URL.createObjectURL(blob);
   lastUrl = url;
   player.src = url;
-  player.play().catch(err => {
+  player.play().catch((err) => {
     console.warn("play() failed:", err);
   });
 
   // 再生終了時に解放（冗長だが安全）
   player.onended = () => {
     if (lastUrl) {
-      try { URL.revokeObjectURL(lastUrl); } catch (e) { }
+      try {
+        URL.revokeObjectURL(lastUrl);
+      } catch (e) {}
       lastUrl = null;
     }
   };
@@ -133,7 +137,7 @@ btnStart.onclick = async () => {
     micBtn.disabled = false;
     startMic(ws);
   };
-  ws.onmessage = ev => {
+  ws.onmessage = (ev) => {
     if (typeof ev.data === "string") {
       const meta = JSON.parse(ev.data);
       // log(`User: ${meta.user_text}\nAI: ${meta.reply_text}`);
@@ -154,10 +158,12 @@ btnStart.onclick = async () => {
 async function startMic(ws) {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   const ctx = new AudioContext({ sampleRate: 16000 });
-  await ctx.audioWorklet.addModule(new URL('./audio-processor.js', import.meta.url));
+  await ctx.audioWorklet.addModule(
+    new URL("./audio-processor.js", import.meta.url),
+  );
   const src = ctx.createMediaStreamSource(stream);
   const node = new AudioWorkletNode(ctx, "audio-processor");
-  node.port.onmessage = e => {
+  node.port.onmessage = (e) => {
     if (ws.readyState === WebSocket.OPEN) {
       ws.send(e.data.buffer);
     }
