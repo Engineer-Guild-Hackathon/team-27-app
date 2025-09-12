@@ -12,3 +12,9 @@ git branch(dev): frontend-dev
 cd frontend
 npm install
 ```
+
+## コード書いた後はprettierでフォーマット
+
+```bash
+npm run format
+```
