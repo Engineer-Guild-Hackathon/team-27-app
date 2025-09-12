@@ -127,7 +127,12 @@ btnStart.onclick = async () => {
   if (ws) return;
   ws = new WebSocket("ws://localhost:8765");
   ws.binaryType = "blob";
-  ws.onopen = () => { wsStatusEl.textContent = "接続中！"; startMic(ws); };
+  ws.onopen = () => {
+    wsStatusEl.textContent = "接続中！";
+    btnStart.disabled = true;
+    micBtn.disabled = false;
+    startMic(ws);
+  };
   ws.onmessage = ev => {
     if (typeof ev.data === "string") {
       const meta = JSON.parse(ev.data);
@@ -139,7 +144,11 @@ btnStart.onclick = async () => {
       playBlob(blob);
     }
   };
-  ws.onclose = () => { wsStatusEl.textContent = "接続終了"; };
+  ws.onclose = () => {
+    wsStatusEl.textContent = "接続終了";
+    btnStart.disabled = false;
+    micBtn.disabled = true;
+  };
 };
 
 async function startMic(ws) {
