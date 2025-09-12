@@ -15,6 +15,7 @@
   ページビルド用
 - [vite-plugin-multi-html](https://npmjs.com/package/vite-plugin-multi-html)
   ページビルド用プラグイン(静的な複数ページのビルドに対応)
+- [vite-plugin-static-copy](https://npmjs.com/package/vite-plugin-static-copy)
 - [prettier](https://npmjs.com/package/prettier)
   コードフォーマッター
 

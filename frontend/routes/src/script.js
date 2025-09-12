@@ -57,7 +57,7 @@ window.addEventListener("load", async () => {
     history.go(-1);
   });
 
-  const pp = parseMarkdown(await (await fetch("../data/example/pp.md")).text());
+  const pp = parseMarkdown(await (await fetch("./data/example/pp.md")).text());
 
   const ppEl = document.createElement("div");
   ppEl.id = "privacy-policy-popup";

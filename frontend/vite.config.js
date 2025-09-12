@@ -2,6 +2,7 @@ import { resolve, basename } from "path";
 import fs from "fs";
 import { defineConfig, loadEnv } from "vite";
 import { createMultiHtmlPlugin } from "vite-plugin-multi-html";
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -20,6 +21,14 @@ export default defineConfig(({ mode }) => {
           name: env.VITE_NAME,
           description: env.VITE_DESCRIPTION,
         }
+      }),
+      viteStaticCopy({
+        targets: [
+          {
+            src: "data",
+            dest: ""
+          }
+        ]
       })
     ],
     build: {

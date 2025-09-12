@@ -52,7 +52,7 @@ logBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("load", async () => {
-  const data = await fetch("../../data/example/log.json");
+  const data = await fetch("./data/example/log.json");
   const json = await data.json();
 
   json.sort((a, b) => b.time - a.time);
