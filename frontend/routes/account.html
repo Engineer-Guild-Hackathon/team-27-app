@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="<%- lang %>">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/styles/account.css" />
+  </head>
+  <body>
+    <div class="input-wrapper">
+      <label for="mail-imput">メールアドレス</label><br />
+      <input id="mail-input" type="email" />
+      <br />
+      <label for="password-input">パスワード</label><br />
+      <input id="password-input" type="password" />
+      <div class="center">
+        <button class="btn" id="register">登録</button>
+        <p>または</p>
+        <button class="btn" id="login">ログイン</button>
+      </div>
+    </div>
+
+    <div class="bottom center">
+      <button class="btn" id="open-privacy-policy">プライバシーポリシー</button>
+    </div>
+
+    <script type="module" src="src/script.js"></script>
+  </body>
+</html>

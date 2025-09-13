@@ -1,0 +1,173 @@
+.character-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.character-wrapper .frame {
+  --main-bgcolor-start: #f6ff78;
+  --main-bgcolor-end: #ffbf35;
+  background: linear-gradient(
+    var(--main-bgcolor-start),
+    var(--main-bgcolor-end)
+  );
+  padding: 10px;
+}
+
+.character-wrapper .frame img {
+  user-select: none;
+  -webkit-user-drag: none;
+  margin: 15px;
+  width: 60vh;
+  max-width: 200px;
+}
+
+.main-panel > * {
+  margin: 10px;
+}
+
+#main-tools {
+  position: fixed;
+  right: 5vw;
+  bottom: 5vh;
+  width: 60px;
+  z-index: 10;
+}
+
+#main-tools > * {
+  margin: 10px;
+}
+
+#main-tools .circle-btn {
+  background: #ffffff;
+}
+
+.mic-on,
+.mic-off {
+  position: relative;
+  width: 20vw;
+  max-width: 150px;
+  height: 20vw;
+  max-height: 150px;
+}
+
+.mic-off::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/icons/mic-off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  z-index: 1;
+}
+
+.mic-on::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/icons/mic-on.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  z-index: 1;
+}
+
+.m {
+  margin: 30px 0;
+  width: 300px;
+}
+
+#log,
+#setting,
+#account {
+  position: relative;
+}
+
+#log::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/icons/log.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+#setting::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/icons/setting.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+#account::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/icons/account.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+#log-title {
+  width: 100%;
+  background-color: var(--blue);
+}
+
+#log-title > * {
+  color: #ffffff;
+}
+
+#log-wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  bottom: -60%;
+  left: 0;
+  background-color: var(--sub-bgcolor);
+  box-shadow: 5px 5px 1px 1px #00000080;
+  margin: 0 auto;
+  width: 100vw;
+  height: 60%;
+  z-index: 5;
+  text-align: center;
+  transition: bottom 0.3s ease-out;
+}
+
+#log-c {
+  margin-left: 50px;
+  padding-right: 15vw;
+  text-align: left;
+  overflow-y: scroll;
+  flex-grow: 1;
+  height: 100%;
+}
+
+#log-c .message {
+  border-bottom: 1px solid #333333;
+}
+
+#log-wrapper.log-open {
+  bottom: 0;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format:write": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format": "npm run format:write && npm run format:check",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "marked": "^16.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "vite": "^7.1.5",
+    "vite-plugin-multi-html": "^1.0.0",
+    "vite-plugin-static-copy": "^3.1.2"
+  }
+}
