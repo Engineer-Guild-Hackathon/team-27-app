@@ -1,0 +1,4 @@
+.env
+linux-cpu-x64
+models
+__pycache__
